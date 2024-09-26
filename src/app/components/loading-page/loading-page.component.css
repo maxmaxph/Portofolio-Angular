@@ -1,0 +1,20 @@
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: pixelate(10); /* Pixelisation */
+    z-index: 1000;
+    transition: filter 1.5s ease-in-out;
+  }
+  
+  .loaded .loading-screen {
+    filter: pixelate(0); /* Suppression de l'effet pixelisé */
+    display: none;
+  }
+  

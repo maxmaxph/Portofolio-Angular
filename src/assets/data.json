@@ -1,0 +1,89 @@
+{
+  "_comment": "HEADER DATA",
+  "siteLogo": "assets/logo.png",
+  "siteName": "MaxWebLab",
+  "links": [
+    { "name": "Accueil", "url": "/home", "active": false },
+    { "name": "projets", "url": "/projets", "active": false },
+
+    { "name": "tree", "url": "#", "active": false },
+    { "name": "for", "url": "#", "active": false },
+    { "name": "five", "url": "#", "active": false }
+  ],
+  "_comment2": "HERO DATA",
+  "myName": "Maxime LENFANT",
+  "myJob": [
+    "Développeur web",
+    "Intégrateur CMS",
+    "Webmaster",
+    "Graphiste",
+    "Créateur de contenus",
+    "Community Manager",
+    "Integrateur ERP/CRM",
+    "Marketing digital",
+    "Com. multi-supports"
+  ],
+  "skills": [
+  {"presentation": "Diplômé en tant que développeur web full stack, je suis également autodidacte passionné, maîtrisant divers outils créatifs et techniques pour offrir des solutions complètes et sur mesure en développement, design et communication digitale. Mon approche est rigoureuse et orientée vers la satisfaction client, tout en restant accessible et transparente.",
+  "title": "Développement Web Full Stack",
+  "description": "Diplômé en développement web full stack, je maîtrise les technologies front-end (Angular, HTML, CSS) et back-end (NestJS, Node.js) pour concevoir des sites web modernes et performants. J'allie rigueur technique et optimisation des performances pour répondre aux besoins spécifiques de chaque projet.", "icon": "assets/icons/web-icon.svg", "img":"assets/images/skills/skill-dev.jpg"},
+
+  {"title": "Création graphique et vidéo",
+  "description": "Autodidacte passionné, je crée des visuels uniques et impactants pour des affiches, logos et vidéos (teasers, aftermovies) destinés à des événements, festivals, associations et PME. Mon approche créative me permet d’adapter chaque design aux supports numériques et physiques.", "icon": "assets/icons/graph-icon.svg" , "img":"assets/images/skills/skill-graph.jpg"},
+
+  {"title": "Gestion de projet digital et SEO",
+  "description": "Polyvalent, je gère la mise en place complète de sites institutionnels (CMS) ainsi que la sécurité, l'hébergement, le SEO, et la conformité RGPD. Je m'assure d'une communication cohérente sur les réseaux sociaux et supports physiques, pour maximiser l'impact des campagnes publicitaires.", "icon": "assets/icons/seo-icon.svg" , "img":"assets/images/skills/skill-seo.jpg"}
+  ],
+  "_comment3": "PROJECT DATA",
+  "project": [
+    {
+      "name": "Site du groupe LAZY",
+      "description": "J'ai créé le site WordPress du groupe hommage à Noir Désir, LAZY, en prenant en charge l'intégration de leur charte graphique, la création du logo, et l'élaboration des contenus visuels. En plus du développement du site, j'ai géré la mise en ligne sur l'hébergeur, la configuration du nom de domaine, et optimisé le référencement pour assurer une bonne visibilité en ligne. Ce projet a permis de créer une vitrine professionnelle et fluide, mettant en valeur l'univers musical du groupe tout en restant simple d'accès pour les utilisateurs.",
+      "category": "Développement Web",
+      "icon": "assets/icons/web-icon.svg",
+      "page": "",
+      "images": [
+        {"img": "assets/images/site-lazy-img1.jpg", "alt": "Aperçu du site lazy image 1"},
+        {"img": "assets/images/site-lazy-img2.jpg", "alt": "Aperçu du site lazy image 2"},
+        {"img": "assets/images/site-lazy-img3.jpg", "alt": "Aperçu du site lazy image 3"}
+      ]
+    },
+    {
+      "name": "Album CD du groupe POSITIV HATE",
+      "description": "Description détaillée du projet B.",
+      "category": "Création Graphique",
+      "icon": "assets/icons/graph-icon.svg",
+      "page": "",
+      "images": [
+        {"img": "assets/images/cd-positivhate-img1.jpg", "alt": "Aperçu du Projet CD Positiv Hate 1"},
+        {"img": "assets/images/cd-positivhate-img2.jpg", "alt": "Aperçu du Projet CD Positiv Hate 2"},
+        {"img": "assets/images/cd-positivhate-img3.jpg", "alt": "Aperçu du Projet CD Positiv Hate 3"}
+      ]
+    },
+    {
+      "name": "Projet C",
+      "description": "Description détaillée du projet C.",
+      "category": "SEO & Gestion de projet",
+      "icon": "assets/icons/seo-icon.svg",
+      "page": "",
+      "images": [
+        {"img": "assets/images/projectC-img1.jpg", "alt": "Aperçu du Projet C image 1"},
+        {"img": "assets/images/projectC-img2.jpg", "alt": "Aperçu du Projet C image 2"},
+        {"img": "assets/images/projectC-img3.jpg", "alt": "Aperçu du Projet C image 3"}
+      ]
+    },
+    {
+      "name": "Projet D",
+      "description": "Description détaillée du projet D.",
+      "category": "Marketing Digital",
+      "icon": "assets/icons/marketing-icon.svg",
+      "page": "",
+      "images": [
+        {"img": "assets/images/projectD-img1.jpg", "alt": "Aperçu du Projet D image 1"},
+        {"img": "assets/images/projectD-img2.jpg", "alt": "Aperçu du Projet D image 2"},
+        {"img": "assets/images/projectD-img3.jpg", "alt": "Aperçu du Projet D image 3"}
+      ]
+    }
+  ]
+  
+}

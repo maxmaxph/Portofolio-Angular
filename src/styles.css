@@ -1,1 +1,274 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Barre de progression */
+.progress-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+  width: 200px;
+  background: rgba(58, 58, 58, 0.493); /* Couleur légèrement transparente */
+  height: 10px;
+  border-radius: 7px;
+  overflow: hidden;
+  z-index: 25; /* Plus haut que la grille */
+}
+
+.progress {
+  width: 1px;
+  height: 10px;
+  border-radius: 7px;
+  background: #fff;
+  transition: 0.5s;
+  animation: loading_bar 5s cubic-bezier(0.4, 1.01, 1, 1) infinite;
+}
+
+@keyframes loading_bar {
+  0% {
+    width: 0%;
+  }
+
+  25% {
+    width: 25%;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  75% {
+    width: 75%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+/* Texte clignotant "Chargement" */
+.loading-text {
+  position: absolute;
+  top: calc(50% + 20px); /* Ajuste le texte juste en dessous de la barre de progression */
+  left: 50%;
+  transform: translate(-50%, 0); /* Centrage horizontal */
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  animation: blink 2s infinite ease-in-out;
+  opacity: 1;
+  z-index: 30; /* Plus haut que la grille */
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.camera-frame {
+  position: fixed; /* Fixé par rapport à la fenêtre, reste visible même en scrollant */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+  z-index: 100;
+}
+
+  
+  .camera-frame.closing {
+    transform: scale(0.2)  translateY(150%);
+    opacity: 0;
+    
+  } 
+  .camera-frame.closing.hidden {
+    display: none; /* Hide the camera frame after the closing animation */
+  }
+
+/* Cadre noir en haut et en bas pour simuler le viseur */
+.camera-frame::before, .camera-frame::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10%;
+  background-color: black;
+  z-index: 20;
+}
+
+.camera-frame::before {
+  .camera-frame::before {
+    top: 0;
+    height: 20%; /* Ajustez pour plus d'espace pour la barre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+}
+
+.camera-frame::after {
+  bottom: 0;
+}
+
+/* Grille de cadrage avec lignes horizontales et verticales */
+.camera-grid {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 15;
+  pointer-events: none;
+}
+
+/* Lignes horizontales */
+.camera-grid .horizontal-line {
+  position: absolute;
+  width: 100%;
+  height: 1.3px;
+  background-color: rgba(54, 54, 54, 0.479);
+  z-index: 20;
+}
+
+.camera-grid .horizontal-line-1 {
+  top: 33.3%;
+}
+
+.camera-grid .horizontal-line-2 {
+  top: 66.6%;
+}
+
+/* Lignes verticales */
+.camera-grid .vertical-line {
+  position: absolute;
+  height: 100%;
+  width: 1.3px;
+  background-color: rgba(54, 54, 54, 0.479);
+  z-index: 20;
+}
+
+.camera-grid .vertical-line-1 {
+  left: 33.3%;
+}
+
+.camera-grid .vertical-line-2 {
+  left: 66.6%;
+}
+
+/* Bouton de capture en bas */
+.capture-btn {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  background-color: rgb(255, 0, 0);
+  border: 5px solid gray;
+  border-radius: 50%;
+  z-index: 30;
+}
+
+/* Simulation du bouton d'enregistrement et du compteur */
+.rec-indicator {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 30;
+}
+
+.rec-circle {
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.rec-timer {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+/* Animation de mise au point et de cadrage */
+@keyframes focus-effect {
+  0% {
+    transform: scale(1);
+    filter: blur(5px) grayscale(100%);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.1) translateX(-10px);
+    filter: blur(20px) grayscale(100%);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    filter: blur(10px) grayscale(50%);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.02) translateX(5px);
+    filter: blur(5px) grayscale(25%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    filter: blur(0) grayscale(0%);
+    opacity: 1;
+  }
+}
+
+/* Appliquer l'animation à #main-content */
+#main-content {
+  position: relative;
+  z-index: 10; /* Assurez-vous que le contenu principal reste au-dessus des autres éléments */
+}
+/* Appliquer l'animation à #main-content */
+#main-content.pixelated {
+    animation: focus-effect 3.5s ease-in-out forwards;
+   
+
+}
+/* Afficher le curseur uniquement sur les écrans de plus de 1024px de largeur */
+@media (min-width: 1024px) {
+  #invertedcursor {
+    display: block;
+  }
+}
+
+/* Cacher le curseur personnalisé sur les petits écrans */
+/* Cacher le curseur personnalisé sur les petits écrans */
+@media (max-width: 1024px) {
+  #invertedcursor {
+    display: none; /* Masquer totalement la div */
+    width: 0; /* Empêcher toute largeur sur mobile */
+    height: 0; /* Empêcher toute hauteur sur mobile */
+    opacity: 0; /* Rendre le curseur totalement invisible */
+  }
+}
+

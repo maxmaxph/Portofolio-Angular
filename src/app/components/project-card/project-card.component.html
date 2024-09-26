@@ -1,0 +1,40 @@
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <!-- Colonne gauche: Détails du projet -->
+      <div class="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
+        <div class="max-w-xl mb-6">
+          <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+            {{ project.name }}
+          </h2>
+          <p class="text-base text-gray-700 md:text-lg">{{ project.description }}</p>
+          <p class="text-sm font-semibold text-teal-600">Catégorie : {{ project.category }}</p>
+        </div>
+      </div>
+  
+      <!-- Colonne droite: Images du projet -->
+      <div class="flex items-center justify-center -mx-4 lg:pl-8">
+        <div class="flex flex-col items-end px-3">
+          <!-- Image 1 -->
+          <img #projectImage *ngIf="project.images[0]" (mouseenter)="onMouseEnter(0)" (mouseleave)="onMouseLeave()"
+            (click)="rotateImages()"
+            class="project-img object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56 transition-transform duration-500 ease-in-out"
+            [src]="project.images[0].img" alt="{{project.images[0].alt}}" />
+          
+          <!-- Image 2 -->
+          <img #projectImage *ngIf="project.images[1]" (mouseenter)="onMouseEnter(1)" (mouseleave)="onMouseLeave()"
+            (click)="rotateImages()"
+            class="project-img object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40 transition-transform duration-500 ease-in-out"
+            [src]="project.images[1].img" alt="{{project.images[1].alt}}" />
+        </div>
+  
+        <div class="px-3">
+          <!-- Image 3 -->
+          <img #projectImage *ngIf="project.images[2]" (mouseenter)="onMouseEnter(2)" (mouseleave)="onMouseLeave()"
+            (click)="rotateImages()"
+            class="project-img object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80 transition-transform duration-500 ease-in-out"
+            [src]="project.images[2].img" alt="{{project.images[2].alt}}" />
+        </div>
+      </div>
+    </div>
+  </div>
+  

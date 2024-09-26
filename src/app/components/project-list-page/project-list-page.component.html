@@ -1,0 +1,44 @@
+<div class="relative inline-block text-left mb-6 flex justify-center mx-auto">
+    <!-- Bouton Dropdown Toggle -->
+    <button id="dropdownToggleButton" data-dropdown-toggle="dropdownToggle" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+      Filtrer les catégories 
+      <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+      </svg>
+    </button>
+  
+    <!-- Dropdown Menu -->
+    <div id="dropdownToggle" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-72 dark:bg-gray-700 dark:divide-gray-600">
+      <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownToggleButton">
+        
+        <!-- Option 'Tous' -->
+        <li>
+          <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+            <label class="inline-flex items-center w-full cursor-pointer">
+              <input type="checkbox" name="category" value="all" class="sr-only peer" (change)="toggleCategory('all')" [checked]="selectedCategories.length === 0 || selectedCategories.includes('all')">
+              <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Tous les projets</span>
+            </label>
+          </div>
+        </li>
+  
+        <!-- Générer dynamiquement les catégories avec icônes -->
+        <li *ngFor="let category of categories">
+          <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+            <label class="inline-flex items-center w-full cursor-pointer">
+              <input type="checkbox" name="category" [value]="category.name" class="sr-only peer" (change)="toggleCategory(category.name)" [checked]="selectedCategories.includes(category.name)">
+              <img src="{{category.icon}}" alt="{{category.name}} icon" class="inline-block h-4 w-4 mr-2">
+              <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">{{category.name}}</span>
+            </label>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+</div>
+
+  
+  <!-- Affichage des projets filtrés -->
+  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
+    <app-project-card *ngFor="let project of filteredProjects" [project]="project"></app-project-card>
+  </div>
+  

@@ -1,0 +1,44 @@
+<div id="vantajs" class="relative z-0 flex items-center justify-center min-h-screen">
+  <div class="overflow-hidden bg-transparent py-4 sm:py-8">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <!-- Gestion des colonnes avec Tailwind grid -->
+      <div class="flex justify-between items-center lg:pr-0 lg:pt-4">
+        <div class="lg:max-w-lg">
+          <!-- Texte à gauche -->
+          <h2 class="text-base font-semibold leading-7 text-indigo-600">{{myName}}</h2>
+          <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <span class="typed-element"></span>
+          </p>
+        </div>
+
+        <!-- Boutons à droite -->
+        <div class="flex space-x-4">
+          <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full"
+            (click)="toggleAnimation()">
+            <i [class]="animationPaused ? 'fas fa-play' : 'fas fa-pause'"></i>
+            <span class="sr-only">{{ animationPaused ? 'Play' : 'Pause' }} Animation</span>
+          </button>
+
+          <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full"
+            (click)="randomizeAnimation()">
+            <i class="fas fa-random"></i>
+            <span class="sr-only">Randomize Animation</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Section des compétences avec les nuages en arrière-plan -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 lg:mt-8">
+        <div class="bg-white bg-opacity-75 rounded-lg shadow-lg p-6" *ngFor="let skill of skills">
+          <div class="flex flex-col items-center space-y-4">
+            <!-- Image au-dessus de l'icône -->
+            <img class="rounded-t-lg" src="{{skill.img}}" alt="" />
+            <img src="{{skill.icon}}" class="h-10 w-10" alt="{{ skill.title }} icon">
+            <h3 class="text-lg font-bold text-indigo-600 text-center">{{ skill.title }}</h3>
+          </div>
+          <p class="mt-4 text-gray-600 text-center">{{ skill.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
