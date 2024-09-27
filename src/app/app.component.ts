@@ -38,13 +38,14 @@ export class AppComponent implements OnInit {
 
   startRecording() {
     const timerElement = document.getElementById('rec-timer');
+    if (!timerElement) return; // Vérifie si l'élément existe
+    
     setInterval(() => {
       this.recTime += 1;
-      if (timerElement) {
-        timerElement.innerText = this.formatTime(this.recTime);
-      }
+      timerElement.innerText = this.formatTime(this.recTime);
     }, 1000);
   }
+  
 
   formatTime(seconds: number): string {
     const minutes = Math.floor(seconds / 60);
@@ -53,15 +54,16 @@ export class AppComponent implements OnInit {
   }
 
   closeCameraEffect() {
-  if (this.isPageLoaded) { // Ensure the page is loaded
-    const cameraFrame = document.querySelector('.camera-frame');
-    if (cameraFrame) {
-      cameraFrame.classList.add('closing');
-      // setTimeout(() => {
-      //   cameraFrame.classList.add('hidden');
-      // }, 1500); // Temps aligné avec la transition CSS
+    if (this.isPageLoaded) { // Ensure the page is loaded
+      const cameraFrame = document.querySelector('.camera-frame');
+      if (cameraFrame) {
+        cameraFrame.classList.add('closing');
+        setTimeout(() => {
+          cameraFrame.classList.add('hidden'); // Cache après l'animation
+        }, 1500); // Temps aligné avec la transition CSS (1.5s)
+      }
     }
   }
-}
+  
 
 }

@@ -24,15 +24,15 @@
     "Com. multi-supports"
   ],
   "skills": [
-  {"presentation": "Diplômé en tant que développeur web full stack, je suis également autodidacte passionné, maîtrisant divers outils créatifs et techniques pour offrir des solutions complètes et sur mesure en développement, design et communication digitale. Mon approche est rigoureuse et orientée vers la satisfaction client, tout en restant accessible et transparente.",
+  {
   "title": "Développement Web Full Stack",
-  "description": "Diplômé en développement web full stack, je maîtrise les technologies front-end (Angular, HTML, CSS) et back-end (NestJS, Node.js) pour concevoir des sites web modernes et performants. J'allie rigueur technique et optimisation des performances pour répondre aux besoins spécifiques de chaque projet.", "icon": "assets/icons/web-icon.svg", "img":"assets/images/skills/skill-dev.jpg"},
+  "description": "Développeur web full stack maîtrisant Angular, HTML, CSS, NestJS et Node.js. J'assure la création de sites modernes, performants et optimisés, adaptés aux besoins de chaque projet.", "icon": "assets/icons/web-icon.svg", "img":"assets/images/skills/skill-dev.webp"},
 
   {"title": "Création graphique et vidéo",
-  "description": "Autodidacte passionné, je crée des visuels uniques et impactants pour des affiches, logos et vidéos (teasers, aftermovies) destinés à des événements, festivals, associations et PME. Mon approche créative me permet d’adapter chaque design aux supports numériques et physiques.", "icon": "assets/icons/graph-icon.svg" , "img":"assets/images/skills/skill-graph.jpg"},
+  "description": "Autodidacte passionné, je conçois des visuels impactants (affiches, logos, vidéos) pour événements, festivals, et PME. Chaque design est adapté aux supports numériques et physiques.", "icon": "assets/icons/graph-icon.svg" , "img":"assets/images/skills/skill-graph.webp"},
 
   {"title": "Gestion de projet digital et SEO",
-  "description": "Polyvalent, je gère la mise en place complète de sites institutionnels (CMS) ainsi que la sécurité, l'hébergement, le SEO, et la conformité RGPD. Je m'assure d'une communication cohérente sur les réseaux sociaux et supports physiques, pour maximiser l'impact des campagnes publicitaires.", "icon": "assets/icons/seo-icon.svg" , "img":"assets/images/skills/skill-seo.jpg"}
+  "description": "Je gère la création de sites institutionnels (CMS), sécurité, hébergement, SEO, et conformité RGPD. J'assure aussi une communication cohérente sur les réseaux sociaux et supports physiques.", "icon": "assets/icons/seo-icon.svg" , "img":"assets/images/skills/skill-seo.webp"}
   ],
   "_comment3": "PROJECT DATA",
   "project": [
@@ -43,9 +43,9 @@
       "icon": "assets/icons/web-icon.svg",
       "page": "",
       "images": [
-        {"img": "assets/images/site-lazy-img1.jpg", "alt": "Aperçu du site lazy image 1"},
-        {"img": "assets/images/site-lazy-img2.jpg", "alt": "Aperçu du site lazy image 2"},
-        {"img": "assets/images/site-lazy-img3.jpg", "alt": "Aperçu du site lazy image 3"}
+        {"img": "assets/images/site-lazy-img1.webp", "alt": "Aperçu du site lazy image 1"},
+        {"img": "assets/images/site-lazy-img2.webp", "alt": "Aperçu du site lazy image 2"},
+        {"img": "assets/images/site-lazy-img3.webp", "alt": "Aperçu du site lazy image 3"}
       ]
     },
     {
@@ -55,9 +55,9 @@
       "icon": "assets/icons/graph-icon.svg",
       "page": "",
       "images": [
-        {"img": "assets/images/cd-positivhate-img1.jpg", "alt": "Aperçu du Projet CD Positiv Hate 1"},
-        {"img": "assets/images/cd-positivhate-img2.jpg", "alt": "Aperçu du Projet CD Positiv Hate 2"},
-        {"img": "assets/images/cd-positivhate-img3.jpg", "alt": "Aperçu du Projet CD Positiv Hate 3"}
+        {"img": "assets/images/cd-positivhate-img1.webp", "alt": "Aperçu du Projet CD Positiv Hate 1"},
+        {"img": "assets/images/cd-positivhate-img2.webp", "alt": "Aperçu du Projet CD Positiv Hate 2"},
+        {"img": "assets/images/cd-positivhate-img3.webp", "alt": "Aperçu du Projet CD Positiv Hate 3"}
       ]
     },
     {
@@ -67,9 +67,9 @@
       "icon": "assets/icons/seo-icon.svg",
       "page": "",
       "images": [
-        {"img": "assets/images/projectC-img1.jpg", "alt": "Aperçu du Projet C image 1"},
-        {"img": "assets/images/projectC-img2.jpg", "alt": "Aperçu du Projet C image 2"},
-        {"img": "assets/images/projectC-img3.jpg", "alt": "Aperçu du Projet C image 3"}
+        {"img": "assets/images/projectC-img1.webp", "alt": "Aperçu du Projet C image 1"},
+        {"img": "assets/images/projectC-img2.webp", "alt": "Aperçu du Projet C image 2"},
+        {"img": "assets/images/projectC-img3.webp", "alt": "Aperçu du Projet C image 3"}
       ]
     },
     {
@@ -79,9 +79,9 @@
       "icon": "assets/icons/marketing-icon.svg",
       "page": "",
       "images": [
-        {"img": "assets/images/projectD-img1.jpg", "alt": "Aperçu du Projet D image 1"},
-        {"img": "assets/images/projectD-img2.jpg", "alt": "Aperçu du Projet D image 2"},
-        {"img": "assets/images/projectD-img3.jpg", "alt": "Aperçu du Projet D image 3"}
+        {"img": "assets/images/projectD-img1.webp", "alt": "Aperçu du Projet D image 1"},
+        {"img": "assets/images/projectD-img2.webp", "alt": "Aperçu du Projet D image 2"},
+        {"img": "assets/images/projectD-img3.webp", "alt": "Aperçu du Projet D image 3"}
       ]
     }
   ]

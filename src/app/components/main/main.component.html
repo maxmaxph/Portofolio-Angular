@@ -1,4 +1,4 @@
-<div id="vantajs" class="relative z-0 flex items-center justify-center min-h-screen">
+<div id="vantajs" #vantajs class="relative z-0 flex items-center justify-center min-h-screen">
   <div class="overflow-hidden bg-transparent py-4 sm:py-8">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <!-- Gestion des colonnes avec Tailwind grid -->
@@ -11,32 +11,38 @@
           </p>
         </div>
 
-        <!-- Boutons à droite -->
+        <!-- Bouton pour mettre en pause ou jouer l'animation -->
         <div class="flex space-x-4">
           <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full"
             (click)="toggleAnimation()">
             <i [class]="animationPaused ? 'fas fa-play' : 'fas fa-pause'"></i>
             <span class="sr-only">{{ animationPaused ? 'Play' : 'Pause' }} Animation</span>
           </button>
-
-          <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full"
-            (click)="randomizeAnimation()">
-            <i class="fas fa-random"></i>
-            <span class="sr-only">Randomize Animation</span>
-          </button>
         </div>
       </div>
 
-      <!-- Section des compétences avec les nuages en arrière-plan -->
+      <!-- Section des compétences -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 lg:mt-8">
-        <div class="bg-white bg-opacity-75 rounded-lg shadow-lg p-6" *ngFor="let skill of skills">
-          <div class="flex flex-col items-center space-y-4">
-            <!-- Image au-dessus de l'icône -->
-            <img class="rounded-t-lg" src="{{skill.img}}" alt="" />
-            <img src="{{skill.icon}}" class="h-10 w-10" alt="{{ skill.title }} icon">
-            <h3 class="text-lg font-bold text-indigo-600 text-center">{{ skill.title }}</h3>
+        <div class="bg-white bg-opacity-25 rounded-lg shadow-lg p-6" *ngFor="let skill of skills">
+          <div class="relative flex flex-col items-center space-y-4 group">
+            <!-- Image avec effet au survol -->
+            <img class="rounded-t-lg skill-image"
+                 src="{{skill.img}}"
+                 alt="{{ skill.title }}"
+                 (mouseover)="changeCursor(skill.icon, $event)"
+                 (mouseleave)="resetCursor($event)" />
+
+            <!-- Description de la compétence qui apparaît au survol -->
+            <div class="skill-overlay absolute inset-0 flex items-center justify-center text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+              <p class="text-center">{{ skill.description }}</p>
+            </div>
+
+            <!-- Icone et titre sur la même ligne -->
+            <div class="flex items-center space-x-2">
+              <img src="{{skill.icon}}" class="h-10 w-10" alt="{{ skill.title }} icon" />
+              <h3 class="text-lg font-bold text-indigo-600">{{ skill.title }}</h3>
+            </div>
           </div>
-          <p class="mt-4 text-gray-600 text-center">{{ skill.description }}</p>
         </div>
       </div>
     </div>

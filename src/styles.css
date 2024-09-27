@@ -2,19 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Adaptation de la page à la hauteur de la fenêtre sur les grands écrans (PC) */
+@media (min-width: 1024px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Prendre toute la hauteur de la fenêtre */
+  }
+
+  app-header, app-footer {
+    flex-shrink: 0; /* Empêche le header et le footer de se rétrécir */
+  }
+
+
+}
+
+/* Adaptation pour les petits écrans (mobile) */
+@media (max-width: 1023px) {
+  #main-content {
+    display: block;
+    /* Scroll autorisé pour mobile */
+  }
+}
 
 /* Barre de progression */
 .progress-loader {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+  transform: translate(-50%, -50%);
   width: 200px;
-  background: rgba(58, 58, 58, 0.493); /* Couleur légèrement transparente */
+  background: rgba(58, 58, 58, 0.493);
   height: 10px;
   border-radius: 7px;
   overflow: hidden;
-  z-index: 25; /* Plus haut que la grille */
+  z-index: 25;
 }
 
 .progress {
@@ -30,19 +58,15 @@
   0% {
     width: 0%;
   }
-
   25% {
     width: 25%;
   }
-
   50% {
     width: 50%;
   }
-
   75% {
     width: 75%;
   }
-
   100% {
     width: 100%;
   }
@@ -51,15 +75,15 @@
 /* Texte clignotant "Chargement" */
 .loading-text {
   position: absolute;
-  top: calc(50% + 20px); /* Ajuste le texte juste en dessous de la barre de progression */
+  top: calc(50% + 20px);
   left: 50%;
-  transform: translate(-50%, 0); /* Centrage horizontal */
+  transform: translate(-50%, 0);
   color: #fff;
   font-size: 14px;
   text-align: center;
   animation: blink 2s infinite ease-in-out;
   opacity: 1;
-  z-index: 30; /* Plus haut que la grille */
+  z-index: 30;
 }
 
 @keyframes blink {
@@ -71,8 +95,9 @@
   }
 }
 
+/* Effet de fermeture de la caméra */
 .camera-frame {
-  position: fixed; /* Fixé par rapport à la fenêtre, reste visible même en scrollant */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -81,15 +106,14 @@
   z-index: 100;
 }
 
-  
-  .camera-frame.closing {
-    transform: scale(0.2)  translateY(150%);
-    opacity: 0;
-    
-  } 
-  .camera-frame.closing.hidden {
-    display: none; /* Hide the camera frame after the closing animation */
-  }
+.camera-frame.closing {
+  transform: scale(0.2) translateY(150%);
+  opacity: 0;
+}
+
+.camera-frame.closing.hidden {
+  display: none;
+}
 
 /* Cadre noir en haut et en bas pour simuler le viseur */
 .camera-frame::before, .camera-frame::after {
@@ -103,22 +127,11 @@
   z-index: 20;
 }
 
-.camera-frame::before {
-  .camera-frame::before {
-    top: 0;
-    height: 20%; /* Ajustez pour plus d'espace pour la barre */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-}
-
 .camera-frame::after {
   bottom: 0;
 }
 
-/* Grille de cadrage avec lignes horizontales et verticales */
+/* Grille de cadrage */
 .camera-grid {
   position: relative;
   width: 100vw;
@@ -161,7 +174,7 @@
   left: 66.6%;
 }
 
-/* Bouton de capture en bas */
+/* Bouton de capture */
 .capture-btn {
   position: absolute;
   bottom: 2%;
@@ -175,7 +188,7 @@
   z-index: 30;
 }
 
-/* Simulation du bouton d'enregistrement et du compteur */
+/* Indicateur REC et timer */
 .rec-indicator {
   position: absolute;
   bottom: 15%;
@@ -195,18 +208,6 @@
   animation: blink 1s infinite;
 }
 
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .rec-timer {
   color: rgb(0, 0, 0);
   font-size: 16px;
@@ -214,7 +215,7 @@
   letter-spacing: 1px;
 }
 
-/* Animation de mise au point et de cadrage */
+/* Animation de mise au point */
 @keyframes focus-effect {
   0% {
     transform: scale(1);
@@ -246,15 +247,14 @@
 /* Appliquer l'animation à #main-content */
 #main-content {
   position: relative;
-  z-index: 10; /* Assurez-vous que le contenu principal reste au-dessus des autres éléments */
+  z-index: 0;
 }
-/* Appliquer l'animation à #main-content */
-#main-content.pixelated {
-    animation: focus-effect 3.5s ease-in-out forwards;
-   
 
+#main-content.pixelated {
+  animation: focus-effect 3.5s ease-in-out forwards;
 }
-/* Afficher le curseur uniquement sur les écrans de plus de 1024px de largeur */
+
+/* Curseur inversé (affiché uniquement sur PC) */
 @media (min-width: 1024px) {
   #invertedcursor {
     display: block;
@@ -262,13 +262,11 @@
 }
 
 /* Cacher le curseur personnalisé sur les petits écrans */
-/* Cacher le curseur personnalisé sur les petits écrans */
 @media (max-width: 1024px) {
   #invertedcursor {
-    display: none; /* Masquer totalement la div */
-    width: 0; /* Empêcher toute largeur sur mobile */
-    height: 0; /* Empêcher toute hauteur sur mobile */
-    opacity: 0; /* Rendre le curseur totalement invisible */
+    display: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
   }
 }
-
