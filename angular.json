@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": ["vanta/dist/vanta.clouds.min"],
             "outputPath": "dist/max-portofolio",
             "index": "src/index.html",
             "browser": "src/main.ts",

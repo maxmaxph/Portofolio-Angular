@@ -22,29 +22,31 @@
       </div>
 
       <!-- Section des compétences -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 lg:mt-8">
-        <div class="bg-white bg-opacity-25 rounded-lg shadow-lg p-6" *ngFor="let skill of skills">
-          <div class="relative flex flex-col items-center space-y-4 group">
-            <!-- Image avec effet au survol -->
-            <img class="rounded-t-lg skill-image"
-                 src="{{skill.img}}"
-                 alt="{{ skill.title }}"
-                 (mouseover)="changeCursor(skill.icon, $event)"
-                 (mouseleave)="resetCursor($event)" />
+      <!-- Section des compétences -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 lg:mt-8">
+  <div class="bg-white bg-opacity-25 rounded-lg shadow-lg p-2" *ngFor="let skill of skills">
+    <div class="relative flex flex-col items-center space-y-4 mt-2 group">
+      <!-- Image avec effet au survol -->
+      <img class="rounded-t-lg skill-image"
+           src="{{skill.img}}"
+           alt="{{ skill.title }}"
+           (mouseover)="changeCursor(skill.icon, $event)"
+           (mouseleave)="resetCursor($event)" width="270" height="270" loading="lazy"/>
 
-            <!-- Description de la compétence qui apparaît au survol -->
-            <div class="skill-overlay absolute inset-0 flex items-center justify-center text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-              <p class="text-center">{{ skill.description }}</p>
-            </div>
-
-            <!-- Icone et titre sur la même ligne -->
-            <div class="flex items-center space-x-2">
-              <img src="{{skill.icon}}" class="h-10 w-10" alt="{{ skill.title }} icon" />
-              <h3 class="text-lg font-bold text-indigo-600">{{ skill.title }}</h3>
-            </div>
-          </div>
-        </div>
+      <!-- Description de la compétence qui apparaît au survol -->
+      <div class="skill-overlay absolute inset-0 flex items-center justify-center text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+        <p class="text-center">{{ skill.description }}</p>
       </div>
+
+      <!-- Icone et titre sur la même ligne -->
+      <div class="flex items-center space-x-2">
+        <img class="h-10 w-10" src="{{skill.icon}}" class="h-10 w-10" alt="{{ skill.title }} icon" width="30" height="30" loading="lazy"/>
+        <h3 class="text-lg font-bold text-indigo-600">{{ skill.title }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
   </div>
 </div>

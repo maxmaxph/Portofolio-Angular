@@ -54,6 +54,15 @@
 }
 
 
+img.h-10.w-10 {
+  width: 30px;  /* Valeurs explicites */
+  height: 30px;
+}
+
+img.rounded-t-lg.skill-image {
+  width: 270px; /* Ajuste selon tes besoins */
+  height: 270px;
+}
 
 
 
